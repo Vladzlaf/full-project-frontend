@@ -1,0 +1,50 @@
+$glass: rgba(255, 255, 255, 0.2);
+$glass-icon: rgba(255, 255, 255, 0.3);
+$background: rgb(142, 142, 231);
+$option: #3f457e85;
+$color_1: #fff;
+$color_2: #555;
+$background-color_1: #4285f4;
+$background-color_2: #fff;
+$background-color_3: #eee;
+$border: #4c8aee;
+
+.wrap__page__animation__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrap__path {
+    outline: 2px solid $border;
+    width: 540px;
+    height: 40px;
+}
+
+
+.wrap__path-brick {
+    width: 40px;
+    height: 40px;
+    background: #4752ee;
+    position: relative;
+    cursor: pointer;
+    &.wrap__custom{
+        animation: go-left-right 2s infinite alternate; 
+        @keyframes go-left-right {        
+            from { left: 0px; }             
+            to { left: calc(100% - 40px); }} 
+    }
+    &.wrap__build {
+        animation: build 2s  infinite;
+        animation-direction: alternate;         
+        @keyframes build {        
+            0% { 
+               transform: translateX(0px);  
+            }             
+            100% { 
+                transform: translateX(500px);
+            }} 
+
+    }
+  }

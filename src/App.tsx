@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './assets/style.scss';
+import './componets//drawer.scss' 
+import './componets/navba.scss'
+import './componets/error-bounadry/err.scss'
+import './app/animation/animations.scss'
+import {BrowserRouter} from 'react-router-dom';
+import Drawer from './componets/drawer';
+import { Navbar } from './componets/navbar';
+import { AppRouter } from './router/app-router';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from 'themes';
+import { Provider } from 'react-redux';
+import store from 'store';
+import ErrorBoundaryComp from 'componets/error-bounadry/error-boundary.comp';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrap__container">
+      <ErrorBoundaryComp>
+        <Provider store={store}>
+          <ThemeProvider theme={theme}>
+            <BrowserRouter>
+                <Navbar />
+                <AppRouter />
+                <Drawer/>
+            </BrowserRouter>
+          </ThemeProvider>
+        </Provider>
+      </ErrorBoundaryComp>
     </div>
   );
 }
 
 export default App;
+

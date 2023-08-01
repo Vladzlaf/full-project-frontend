@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateError should not throw an error when the button is not clicked 1`] = `
+<div>
+  <div
+    class="wrap"
+  >
+    <button
+      class="wrap__btn--err"
+    >
+      Click and you will see
+    </button>
+  </div>
+</div>
+`;
